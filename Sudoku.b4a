@@ -1,0 +1,123 @@
+﻿Build1=Default,b4a.example
+File1=1.png
+File10=barnabey.ttf
+File11=bismarck-nroxr.ttf
+File12=Component 1.png
+File13=Component 38.png
+File14=DifficultyLevel.png
+File15=EASY.bal
+File16=easypanel.png
+File17=erase button.png
+File18=frame.png
+File19=GRID.png
+File2=2.png
+File20=HARD.bal
+File21=HardPanel.png
+File22=Home Page.png
+File23=HOME.bal
+File24=homebtn.png
+File25=MEDIUM.bal
+File26=night-lake-sky-scenery-nature-uhdpaper.com-hd-mobile-8 2.png
+File27=PICKDIFF.bal
+File28=Solver.png
+File29=sunset-landscape-art-scenery-mountain-uhdpaper.com-hd-mobile-8 2.png
+File3=3.png
+File30=wallpapersden 3.png
+File4=4.png
+File5=5.png
+File6=6.png
+File7=7.png
+File8=8.png
+File9=9.png
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup12=Default Group
+FileGroup13=Default Group
+FileGroup14=Default Group
+FileGroup15=Default Group
+FileGroup16=Default Group
+FileGroup17=Default Group
+FileGroup18=Default Group
+FileGroup19=Default Group
+FileGroup2=Default Group
+FileGroup20=Default Group
+FileGroup21=Default Group
+FileGroup22=Default Group
+FileGroup23=Default Group
+FileGroup24=Default Group
+FileGroup25=Default Group
+FileGroup26=Default Group
+FileGroup27=Default Group
+FileGroup28=Default Group
+FileGroup29=Default Group
+FileGroup3=Default Group
+FileGroup30=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+Library1=core
+Library2=xui
+Library3=ime
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="29"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~'End of default text.~\n~
+Module1=Difficulty
+Module2=Easy
+Module3=Hard
+Module4=Medium
+Module5=pickDiff
+NumberOfFiles=30
+NumberOfLibraries=3
+NumberOfModules=5
+Version=12.2
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: Sudoku
+	#VersionCode: 1
+	#VersionName: 
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: portrait
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+		#FullScreen: False
+	#IncludeTitle: False
+#End Region
+
+Sub Process_Globals
+
+End Sub
+
+Sub Globals
+	'These global variables will be redeclared each time the activity is created.
+	Private Playbtn As Button
+	Private exitbtn As Button
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	Activity.LoadLayout("HOME")
+End Sub
+
+Sub Activity_Resume
+
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+	
+End Sub
+
+Private Sub Playbtn_Click
+	StartActivity(pickDiff)
+End Sub
+
+Private Sub exitbtn_Click
+	Dim ext As Int
+	ext = Msgbox2("","Exit Game?","Yes","","No",Null)
+	If ext = DialogResponse.POSITIVE Then
+		ExitApplication
+	End If
+End Sub
